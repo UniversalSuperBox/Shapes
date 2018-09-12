@@ -65,7 +65,7 @@ public class Cuboid extends Shape {
         }
     }
 
-    /** Get this cuboid's height
+    /** Get this cuboid's height */
     public float getHeight() {
         return this.height;
     }
