@@ -31,7 +31,7 @@ public class Cylinder extends Shape {
     /** Get the volume of this Cylinder */
     @Override
     public float volume() {
-        return ((float)Math.PI * 2) * (radius * radius) * height;
+        return (float)Math.PI * (radius * radius) * height;
     }
 
     /** Show a message box with this Cylinder's radius, height, surface area, and volume. */
@@ -60,7 +60,7 @@ public class Cylinder extends Shape {
         }
     }
 
-    /** Get this Cylinder's height
+    /** Get this Cylinder's height */
     public float getHeight() {
         return this.height;
     }
