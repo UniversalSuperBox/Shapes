@@ -8,16 +8,6 @@ import org.junit.Test;
 
 public class CylinderTest {
 
-	@Test
-	public void testSurfaceArea() {
-		assertEquals(new Cylinder(2, 3).surfaceArea(), 62.83, 0.1);
-	}
-
-	@Test
-	public void testVolume() {
-		assertEquals(new Cylinder(2, 3).volume(), 37.699, 0.001);
-	}
-
 	@Test(expected = IllegalArgumentException.class)
 	public void testCylinderNegRadius() {
 		new Cylinder(-1, 3);

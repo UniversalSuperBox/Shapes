@@ -4,14 +4,16 @@ import org.cvtc.shapes.Sphere;
 
 import static org.junit.Assert.*;
 
+import java.util.Arrays;
+import java.util.Collection;
+
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameter;
+import org.junit.runners.Parameterized.Parameters;
 
 public class SphereTest {
-
-	@Test
-	public void testSurfaceArea() {
-		assertEquals(new Sphere(5).surfaceArea(), 314.1, 0.2);
-	}
 
 	@Test
 	public void testVolume() {

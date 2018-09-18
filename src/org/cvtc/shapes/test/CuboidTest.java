@@ -8,16 +8,6 @@ import org.junit.Test;
 
 public class CuboidTest {
 
-	@Test
-	public void testSurfaceArea() {
-		assertEquals(new Cuboid(1, 2, 3).surfaceArea(), 22, 0.0002);
-	}
-
-	@Test
-	public void testVolume() {
-		assertEquals(new Cuboid(1, 2, 3).volume(), 6, 0.0002);
-	}
-
 	@Test(expected = IllegalArgumentException.class)
 	public void testCuboidNegWidth() {
 		new Cuboid(-1, 2, 3);
