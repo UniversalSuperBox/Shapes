@@ -20,7 +20,7 @@ public class Sphere extends Shape {
     @Override
     public float surfaceArea() {
         // 4πr^2
-        return (4 * (float)Math.PI * radius * radius);
+        return (4 * (float)Math.PI * (radius * radius));
     }
 
     /** Get the volume of this Sphere */
