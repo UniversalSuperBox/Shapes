@@ -1,0 +1,30 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "shapes01-ddurst2",
+                "projectName": "shapes01-ddurst2",
+                "workingDirectory": "/home/dalton/development/shapes01-ddurst2",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "shapes01-ddurst2",
+                "projectName": "shapes01-ddurst2",
+                "workingDirectory": "/home/dalton/development/shapes01-ddurst2",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}
