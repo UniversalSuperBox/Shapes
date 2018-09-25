@@ -16,6 +16,8 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(Parameterized.class)
 public class CylinderTestVolume {
 
+	MessageBoxSub myMessageBoxSub = new MessageBoxSub();
+
 	@Parameters
 	public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {{1f, 1f, 3.14f}, {1f, 2f, 6.28f}, {2f, 2f, 25.13f}});
@@ -32,7 +34,7 @@ public class CylinderTestVolume {
 
 	@Test
 	public void testVolume() {
-		assertEquals(new Cylinder(rInput, hInput).volume(), expected, 0.1);
+		assertEquals(new Cylinder(rInput, hInput, myMessageBoxSub).volume(), expected, 0.1);
 	}
 
 }

@@ -16,6 +16,8 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(Parameterized.class)
 public class CuboidTestSurfaceArea {
 
+	MessageBoxSub myMessageBoxSub = new MessageBoxSub();
+
 	@Parameters
 	public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
@@ -37,7 +39,7 @@ public class CuboidTestSurfaceArea {
 
 	@Test
 	public void testVolume() {
-		assertEquals(new Cuboid(rInput, hInput, dInput).surfaceArea(), expected, 0.1);
+		assertEquals(new Cuboid(rInput, hInput, dInput, myMessageBoxSub).surfaceArea(), expected, 0.1);
 	}
 
 }

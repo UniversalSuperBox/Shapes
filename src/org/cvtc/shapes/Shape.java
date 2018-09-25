@@ -8,13 +8,16 @@ package org.cvtc.shapes;
  */
 public abstract class Shape {
 
-	/** The shape's surface area */
+	protected MessageBox messageBox;
+
+	public Shape(MessageBox messageBox) {
+		this.messageBox = messageBox;
+	}
+
+	/** The shape's surface area. */
 	abstract float surfaceArea();
 
-	/** The shape's volume */
+	/** The shape's volume. */
 	abstract float volume();
-
-	/** Show a message box detailing the shape's surface area, volume, and dimensions */
-	abstract void render();
 
 }

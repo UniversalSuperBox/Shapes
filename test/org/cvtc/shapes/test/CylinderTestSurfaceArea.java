@@ -16,6 +16,8 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(Parameterized.class)
 public class CylinderTestSurfaceArea {
 
+	MessageBoxSub myMessageBoxSub = new MessageBoxSub();
+
 	@Parameters
 	public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {{1f, 1f, 12.56f}, {1f, 2f, 18.85f}, {2f, 2f, 50.27f}});
@@ -32,7 +34,7 @@ public class CylinderTestSurfaceArea {
 
 	@Test
 	public void testSurfaceArea() {
-		assertEquals(new Cylinder(rInput, hInput).surfaceArea(), expected, 0.1);
+		assertEquals(new Cylinder(rInput, hInput, myMessageBoxSub).surfaceArea(), expected, 0.1);
 	}
 
 }

@@ -1,18 +1,19 @@
 package org.cvtc.shapes;
 
-import javax.swing.JOptionPane;
-
 /** A Sphere object */
 
-public class Sphere extends Shape {
+public class Sphere extends Shape implements IRenderer {
 
     // Radius of sphere
-    private float radius;
+    protected float radius;
 
     /** Create a new Sphere
      * @param radius radius of the new Sphere
+     * @param messageBox MessageBox to use when rendering
+     * @throws IllegalArgumentException if radius is not positive
      */
-    public Sphere(float radius) throws IllegalArgumentException {
+    public Sphere(float radius, MessageBox messageBox) throws IllegalArgumentException {
+        super(messageBox);
         setRadius(radius);
     }
 
@@ -31,11 +32,11 @@ public class Sphere extends Shape {
 
     /** Show a message box with this Sphere's radius, height, depth, surface area, and volume. */
     @Override
-    public void render() {
+    public int render() {
         String rendered = "Radius: " + String.valueOf(radius) + "\n";
         rendered += "Surface Area: " + String.valueOf(surfaceArea()) + "\n";
         rendered += "Volume: " + String.valueOf(volume()) + "\n";
-        JOptionPane.showMessageDialog(null, rendered);
+        return messageBox.show(rendered);
     }
 
     /** Get this Sphere's radius */

@@ -16,6 +16,8 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(Parameterized.class)
 public class SphereTestSurfaceArea {
 
+	MessageBoxSub myMessageBoxSub = new MessageBoxSub();
+
 	@Parameters
 	public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {{1f, 12.57f}, {2f, 50.28f}, {3f, 113.14f}});
@@ -29,7 +31,7 @@ public class SphereTestSurfaceArea {
 
 	@Test
 	public void testSurfaceArea() {
-		assertEquals(fExpected, new Sphere(fInput).surfaceArea(), 0.2);
+		assertEquals(fExpected, new Sphere(fInput, myMessageBoxSub).surfaceArea(), 0.2);
 	}
 
 }

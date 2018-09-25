@@ -16,6 +16,8 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(Parameterized.class)
 public class SphereTestVolume {
 
+	MessageBoxSub myMessageBoxSub = new MessageBoxSub();
+
 	@Parameters
 	public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {{1f, 4.19f}, {2f, 33.52f}, {3f, 113.14f}});
@@ -29,7 +31,7 @@ public class SphereTestVolume {
 
 	@Test
 	public void testVolume() {
-		assertEquals(fExpected, new Sphere(fInput).volume(), 0.2);
+		assertEquals(fExpected, new Sphere(fInput, myMessageBoxSub).volume(), 0.2);
 	}
 
 }

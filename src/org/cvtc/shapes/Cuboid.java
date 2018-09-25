@@ -1,10 +1,8 @@
 package org.cvtc.shapes;
 
-import javax.swing.JOptionPane;
-
 /** A cuboid object */
 
-public class Cuboid extends Shape {
+public class Cuboid extends Shape implements IRenderer {
 
     // Width of cuboid
     private float width;
@@ -17,9 +15,11 @@ public class Cuboid extends Shape {
      * @param width Width of the new Cuboid
      * @param height Height of the new Cuboid
      * @param depth Depth of the new Cuboid
-     * @throws IllegalArgumentException if any argument is not positive
+     * @param messageBox MessageBox to use when rendering
+     * @throws IllegalArgumentException if any of width, height, or depth is not positive
      */
-    public Cuboid(float width, float height, float depth) throws IllegalArgumentException {
+    public Cuboid(float width, float height, float depth, MessageBox messageBox) throws IllegalArgumentException {
+        super(messageBox);
         setWidth(width);
         setHeight(height);
         setDepth(depth);
@@ -39,13 +39,13 @@ public class Cuboid extends Shape {
 
     /** Show a message box with this Cuboid's width, height, depth, surface area, and volume. */
     @Override
-    public void render() {
+    public int render() {
         String rendered = "Width: " + String.valueOf(width) + "\n";
         rendered += "Height: " + String.valueOf(height) + "\n";
         rendered += "Depth: " + String.valueOf(depth) + "\n";
         rendered += "Surface Area: " + String.valueOf(surfaceArea()) + "\n";
         rendered += "Volume: " + String.valueOf(volume()) + "\n";
-        JOptionPane.showMessageDialog(null, rendered);
+        return messageBox.show(rendered);
     }
 
     /** Get this cuboid's width */

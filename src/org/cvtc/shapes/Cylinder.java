@@ -1,10 +1,8 @@
 package org.cvtc.shapes;
 
-import javax.swing.JOptionPane;
-
 /** A Cylinder object */
 
-public class Cylinder extends Shape {
+public class Cylinder extends Shape implements IRenderer {
 
     // Radius of cylinder
     private float radius;
@@ -14,8 +12,11 @@ public class Cylinder extends Shape {
     /** Create a new Cylinder
      * @param radius radius of the new Cylinder
      * @param height Height of the new Cylinder
+     * @param messageBox MessageBox to use when rendering
+     * @throws IllegalArgumentException if radius or height is not positive
      */
-    public Cylinder(float radius, float height) throws IllegalArgumentException {
+    public Cylinder(float radius, float height, MessageBox messageBox) throws IllegalArgumentException {
+        super(messageBox);
         setRadius(radius);
         setHeight(height);
     }
@@ -36,12 +37,12 @@ public class Cylinder extends Shape {
 
     /** Show a message box with this Cylinder's radius, height, surface area, and volume. */
     @Override
-    public void render() {
+    public int render() {
         String rendered = "Radius: " + String.valueOf(radius) + "\n";
         rendered += "Height: " + String.valueOf(height) + "\n";
         rendered += "Surface Area: " + String.valueOf(surfaceArea()) + "\n";
         rendered += "Volume: " + String.valueOf(volume()) + "\n";
-        JOptionPane.showMessageDialog(null, rendered);
+        return messageBox.show(rendered);
     }
 
     /** Get this Cylinder's radius */
