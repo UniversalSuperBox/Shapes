@@ -2,7 +2,7 @@ package org.cvtc.shapes;
 
 /** A Sphere object */
 
-public class Sphere extends Shape implements IRenderer {
+public class Sphere extends Shape implements IRenderer, IShape {
 
     // Radius of sphere
     protected float radius;

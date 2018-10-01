@@ -1,19 +1,20 @@
 package org.cvtc.shapes;
 
 /** Test program for the Shapes library */
-public class TestShapes {
+public class ShapesTest {
 
 	public static void main(String[] args) {
 
 		// The cuboid that we'll render
-		Cuboid myCuboid;
+		IShape myCuboid;
 		// The cylinder that we'll render
-		Cylinder myCylinder;
+		IShape myCylinder;
 		// The Sphere that we'll render
-		Sphere mySphere;
+		IShape mySphere;
 
 		// A dialog box for all of them
 		MessageBox myMessageBox = new MessageBox(null, "Shapes test program");
+		ShapeFactory whyDoIHaveShapeFactory = new ShapeFactory(myMessageBox);
 
 		// Unit tests? Where we're going we don't need unit tests.
 		try {
@@ -49,16 +50,25 @@ public class TestShapes {
 			System.out.println("Correctly can't instance sphere with negative radius");
 		}
 
-		myCuboid = new Cuboid(5, 5, 5, myMessageBox);
-		myCylinder = new Cylinder(5, 5, myMessageBox);
-		mySphere = new Sphere(5, myMessageBox);
+		myCuboid = whyDoIHaveShapeFactory.make(ShapeType.Cuboid);
+		myCylinder = whyDoIHaveShapeFactory.make(ShapeType.Cylinder);
+		mySphere = whyDoIHaveShapeFactory.make(ShapeType.Sphere);
 
 		System.out.println("Rendering cuboid");
-		myCuboid.render();
+		if (myCuboid instanceof IRenderer) {
+			IRenderer tempCuboid = (IRenderer) myCuboid;
+			tempCuboid.render();
+		}
 		System.out.println("Rendering cylinder");
-		myCylinder.render();
+		if (myCylinder instanceof IRenderer) {
+			IRenderer tempCylinder = (IRenderer) myCylinder;
+			tempCylinder.render();
+		}
 		System.out.println("Rendering sphere");
-		mySphere.render();
+		if (mySphere instanceof IRenderer) {
+			IRenderer tempCylinder = (IRenderer) mySphere;
+			tempCylinder.render();
+		};
 
 	}
 

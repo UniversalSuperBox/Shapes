@@ -2,7 +2,7 @@ package org.cvtc.shapes;
 
 /** A cuboid object */
 
-public class Cuboid extends Shape implements IRenderer {
+public class Cuboid extends Shape implements IRenderer, IShape {
 
     // Width of cuboid
     private float width;

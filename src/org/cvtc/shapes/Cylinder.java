@@ -2,7 +2,7 @@ package org.cvtc.shapes;
 
 /** A Cylinder object */
 
-public class Cylinder extends Shape implements IRenderer {
+public class Cylinder extends Shape implements IRenderer, IShape {
 
     // Radius of cylinder
     private float radius;

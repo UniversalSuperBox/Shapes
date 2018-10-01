@@ -14,6 +14,7 @@ public class MessageBoxSub extends MessageBox {
         super(null, "");
     }
 
+    @Override
     public int show(String title) {
         return JOptionPane.OK_OPTION;
     }

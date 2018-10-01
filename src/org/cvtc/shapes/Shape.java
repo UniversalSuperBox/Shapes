@@ -14,10 +14,4 @@ public abstract class Shape {
 		this.messageBox = messageBox;
 	}
 
-	/** The shape's surface area. */
-	abstract float surfaceArea();
-
-	/** The shape's volume. */
-	abstract float volume();
-
 }
